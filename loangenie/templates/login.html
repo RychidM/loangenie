@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/login.css">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="right-side">
+                <div class="right-bg">
+                    <div class="join-us-img">
+                        <img src="/static/img/leisure _ mantv, .png" alt="">
+                    </div>
+                    <div class="join-us-text">
+                        <p>Sign in & Continue Enjoying  <br> Loan Genie</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="Left-side">
+                <div class="log-logo">
+                    <img src="/static/img/logo50x168.png" alt="">
+                </div>
+
+                <div class="form-container">
+                    <div class="form signup">
+                        <span class="title">Signin to Your Account</span>
+                        <form action="{{ url_for('login') }}" method="post" id="signUpForm">
+                                <div class="input-field">
+                                <input type="text" name="userName" id="userName" placeholder="Username"required>
+                                <i class="uil uil-at icon"></i>
+                                <small >{{ errormsg }}</small>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="passwordCC" name="password" id="password" placeholder="Password"required>
+                                <i class="uil uil-lock icon"></i>
+                                <i class="uil uil-eye-slash showHidePw"></i>
+                                <small >{{ errormsg }}</small>
+                            </div>
+                            <div class="checkbox-text">
+                                <div class="checkbox-content">
+                                    <input type="checkbox" name="rememder" id="sigCheck">
+                                    <label for="sigCheck" class="text">Remember me</label>
+
+                                    <a href="" class="text">Forgot password?</a>
+                                </div>
+                            </div>
+
+                            <div class="input-field button">
+                                <button>
+                                    <span>Login</span>
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="login-signup">
+                            <span class="text">New comer?  
+                                <a href="{{ url_for('register') }}" class="text login-text"> signup Here</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+           
+        </div>
+    </div>
+
+    <script src="/static/js/scripts.js"></script>
+</body>
+</html>

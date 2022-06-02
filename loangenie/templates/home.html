@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styleHome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;
+    0,700;1,300;1,700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;
+    0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+     rel="stylesheet">
+     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    </script>
+    <title>Home</title>
+</head>
+<body>
+    <div class="mainCont"  id="blur">
+        <div class="bg-cont">
+        <!-- start blured shapes bg -->
+        <div></div>
+        <div></div>
+        <div></div>
+        <!-- end blur shape bg -->
+        </div>
+    <!-- nav bar starts -->
+    <header>
+        <div class="nav-grid">
+            <div class="logo-img"><a href="#"><img src="/static/img/logo50x168.png"
+                alt="" height="37px" width="125px"></div></a>
+            <div class="nav-list">
+                <ul>
+                    <li ><a class="active" style="padding-right:2em" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a class="nav-li" href="{{ url_for('about') }}">About</a></li>
+                </ul>
+            </div>
+            <div class="nav-sign-in-out-btn">
+                <ul>
+                    <li><a class="nav-sign-in-btn" href="{{ url_for('login') }}" id="loggBtn" onclick="toggle()">Sign In</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- nav bar ends -->
+    <!-- page contents starts -->
+    <div class="land-page-container" id="blur">
+        <div class="land-page">
+            <div class="left-side">
+                <h3>Check your<br> loan eligibility in seconds</h3><br>
+                <p>The fasters way to check how likely you are to get a loan <br>
+                     Sign in to get started now</p><br><br>
+                     <a href="{{ url_for('register') }}" id="getStartedBtn"">Get Started</a>
+            </div>
+            <div class="right-side"><img src="/static/img/rev.svg" alt="" ></div>
+    </div>
+    </div>
+    </div>  
+    <!-- page contents ends -->
+    
+    <script src="/static/js/scripts.js"></script>
+</body>
+</html>

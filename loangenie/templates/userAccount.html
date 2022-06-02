@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="/static/css/userAcc.css">
+    <title>Account</title>
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <nav class="sidebar">
+                <header>
+                    <div class="image-text">
+                        <span class="image">
+                            <img class="cube-logo" src="/static/img/logo-cube.png" alt="">
+                            <img class="rec-logo" src="/static/img/logo-rec.png" alt="">
+                        </span>
+                    </div>
+
+                    <i class="uil uil-angle-right toggle"></i>
+                </header>
+
+                <div class="menu-bar">
+                    <div class="menu">
+                        <ul class="menu-links">
+                            <li class="nav-link">
+                                <a href="{{ url_for('dashboard') }}">
+                                    <i class="uil uil-apps icon"></i>
+                                    <span class="text nav-text">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="{{ url_for('predict') }}">
+                                    <i class="uil uil-dice-three icon"></i>
+                                    <span class="text nav-text">Predict</span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a class="active" href="{{ url_for('userAccount') }}">
+                                    <i class="uil uil-user icon"></i>
+                                    <span class="text nav-text">Admin Info</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-content">
+                        <li class="">
+                            <a href="{{ url_for('logout') }}">
+                                <i class="uil uil-sign-out-alt icon"></i>
+                                <span class="text nav-text">Logout</span>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+
+            </nav> 
+        </aside>
+           
+        <main>                
+           <div class="imgFile">
+            <img class="userImg" src="{{ image_file }}" alt="">
+            <div class="des">
+                <h2>{{ name }}</h2>
+                <p>{{ org }}</p>
+            </div>
+            
+           </div>
+           <div class="infoCard">
+                <div class="desName">
+                    <h3>Display Name</h3>
+                    <p>{{ name }}</p>
+                </div>
+                <div class="desOrg">
+                    <h3>Organization</h3>
+                    <p>{{ org }}</p>
+                </div>
+                <div class="desEmail">
+                    <h3>Email</h3>
+                    <p>{{ emailAdd }}</p>
+                </div>
+                <div class="desPass">
+                    <h3>Password</h3>
+                    <p>{{ passWord }}</p>
+                </div>
+           </div>
+        </main>
+
+    </div>
+
+</body>
+</html>

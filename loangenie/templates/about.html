@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/about.css">
+    <title>About</title>
+</head>
+<body>
+    <div class="mainCont"  id="blur">
+        <div class="bg-cont">
+        <!-- start blured shapes bg -->
+        <div></div>
+        <div></div>
+        <div></div>
+        <!-- end blur shape bg -->
+        </div>
+    <!-- nav bar starts -->
+    <header>
+        <div class="nav-grid">
+            <div class="logo-img"><a href="#"><img src="/static/img/logo50x168.png"
+                alt="" height="37px" width="125px"></div></a>
+            <div class="nav-list">
+                <ul>
+                    <li ><a style="padding-right:2em" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a class="nav-li active" href="{{ url_for('about') }}">About</a></li>
+                </ul>
+            </div>
+            <div class="nav-sign-in-out-btn">
+                <ul>
+                    <li><a class="nav-sign-in-btn" href="{{ url_for('register') }}" id="loggBtn" onclick="toggle()">Join Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- nav bar ends -->
+    <!-- page contents starts -->
+
+    <div class="container">
+        <div class="card">
+            <div class="abtImg">
+                <img src="/static/img/me.png" alt="">
+            </div>
+            <div class="abtTxt">
+                <h2>
+                    Hi there!
+                </h2>
+                <p>
+                    I'm Richard and Loan Genie is my final year project <br>as part fulfilment of the requirements for the<br> degree of Bachelor of Science 
+                    in Computer Science. <br>The main objective of this project is to predict loan<br> default by applying machine learning 
+                    algorithms.
+                </p>
+            </div>
+        </div>
+        
+    </div>
+  
+    </div>  
+    <!-- page contents ends -->
+    
+</body>
+</html>

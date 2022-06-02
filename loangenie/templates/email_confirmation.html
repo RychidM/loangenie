@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/confirm.css">
+    <title>email confirmation</title>
+</head>
+<body>
+    <div class="bg-cont">
+        <!-- start blured shapes bg -->
+        <div></div>
+        <div></div>
+        <div></div>
+        <!-- end blur shape bg -->
+    </div>
+    <div class="container">
+        <div class="card">
+            <img src="/static/img/logo-rec.png" alt="" class="logo">
+            <h2>Verify Email</h2>
+            <p>Please check the email address you provided for verification link</p>
+            <div class="btn">
+                <a href="{{ url_for('home') }}">Go Back Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

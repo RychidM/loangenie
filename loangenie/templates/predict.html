@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="/static/css/predict.css">
+    <title>Predict</title>
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <nav class="sidebar">
+                <header>
+                    <div class="image-text">
+                        <span class="image">
+                            <img class="cube-logo" src="/static/img/logo-cube.png" alt="">
+                            <img class="rec-logo" src="/static/img/logo-rec.png" alt="">
+                        </span>
+                    </div>
+
+                    <i class="uil uil-angle-right toggle"></i>
+                </header>
+
+                <div class="menu-bar">
+                    <div class="menu">
+                        <ul class="menu-links">
+                            <li class="nav-link">
+                                <a href="{{ url_for('dashboard') }}">
+                                    <i class="uil uil-apps icon"></i>
+                                    <span class="text nav-text">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a class="active" href="{{ url_for('predict') }}">
+                                    <i class="uil uil-dice-three icon"></i>
+                                    <span class="text nav-text">Predict</span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="{{ url_for('userAccount') }}">
+                                    <i class="uil uil-user icon"></i>
+                                    <span class="text nav-text">Admin Info</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-content">
+                        <li class="">
+                            <a href="{{ url_for('logout') }}">
+                                <i class="uil uil-sign-out-alt icon"></i>
+                                <span class="text nav-text">Logout</span>
+                            </a>
+                        </li>
+                        
+                    </div>
+                    
+                </div>
+
+            </nav> 
+        </aside>
+           
+        <main>                
+            <div class="form-container">
+                <header>Make a prediction</header>
+                {% for message in get_flashed_messages() %}
+                <p class="message">{{ message }}</p>
+                {% endfor %}
+                
+
+                <form action="{{ url_for('predict') }}" method="post">
+                    <div class="form first">
+                        <div class="details personal">
+                            <span class="title">Applicant Personal Details >>></span>
+
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label for="Fullname">Full Name</label>
+                                    <input type="text" name="Fullname" id="" placeholder="Full Name" required>
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="DOB">Date of Birth</label>
+                                    <input type="date" name="DOB" id="" placeholder="Date of Birth" required>
+                                </div>
+                                                             
+                                <div class="input-field">
+                                    <label for="emailAddress">Email Address</label>
+                                    <input type="email" name="emailAddress" id="" placeholder="Email Address" required>
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="Gender">Gender</label>
+                                    <select name="Gender" id="" class="select">
+                                        <div class="options">
+                                        <option value="" disabled selected>Select gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        </div>
+                                    </select>
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="Education">Education</label>
+                                    <select name="Education" id="" class="select">
+                                        <div class="options">
+                                        <option value="" disabled selected>Are you a graduate?</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                        </div>  
+                                    </select>
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="Married">Marital Status</label>
+                                    <select name="Married" id="" class="select">
+                                        <div class="options">
+                                        <option value="" disabled selected>Are you married?</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                        </div>  
+                                    </select>
+                                </div>
+                                
+                                <span class="title-2">Applicant Loan Details >>></span>
+
+                                <div class="input-field">
+                                    <label for="Dependents">Number of dependents</label>
+                                    <select name="Dependents" id="" class="select">
+                                        <div class="options">
+                                        <option value="" disabled selected>Dependants</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3+">3+</option>
+                                        </div>  
+                                    </select>
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="Self_Employed">Employment Status</label>
+                                    <select name="Self_Employed" id="" class="select">
+                                        <div class="options">
+                                        <option value="" disabled selected>Are you self employed?</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                        </div>  
+                                    </select>
+                                </div>
+                                
+                                <div class="input-field">
+                                    <label for="ApplicantIncome">Annual Income</label>
+                                    <input type="number" name="ApplicantIncome" id="" placeholder="Annual Income" required>
+                                </div> 
+
+                                <div class="input-field">
+                                    <label for="CoapplicantIncome">Coannual Income</label>
+                                    <input type="number" name="CoapplicantIncome" id="" placeholder="Connual Income" required>
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="LoanAmount">Loan Amount</label>
+                                    <input type="number" name="LoanAmount" id="" placeholder="Loan Amount" required>
+                                </div>
+                                
+                                <div class="input-field">
+                                    <label for="Loan_Amount_Term">Loan Term</label>
+                                    <input type="number" name="Loan_Amount_Term" id="" placeholder="Term in days" required>
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="Credit_History">Credit History</label>
+                                    <select name="Credit_History" id="" class="select">
+                                        <div class="options">
+                                        <option value="" disabled selected>Credit History</option>
+                                        <option value="All debts paid">All debts paid</option>
+                                        <option value="Not paid">Not paid</option>
+                                        </div>  
+                                    </select>
+                                </div>
+                                
+                                <div class="input-field">
+                                    <label for="Property_Area">Property Area</label>
+                                    <select name="Property_Area" id="" class="select">
+                                        <div class="options">
+                                        <option value="" disabled selected>Property Area</option>
+                                        <option value="Rural">Rural</option>
+                                        <option value="Semiurban">Semiurban</option>
+                                        <option value="Urban">Urban</option>
+                                        </div>  
+                                    </select>
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="telNumber">Phone Number</label>
+                                    <input type="number" name="telNumber" id="" placeholder="Phone number" required>
+                                </div>
+
+                            </div>
+                            <button class="predict">
+                                <span>Predict</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <br>
+            <footer class="copyright">
+                <small>&copy; Copyright <span id="currYr"></span></small>
+            </footer>
+        </main>
+        
+
+    </div>
+    <script src="/static/js/scripts.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

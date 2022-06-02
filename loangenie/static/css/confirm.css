@@ -1,0 +1,117 @@
+/* ===== Google Font Import - Poformsins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+
+body .container{
+    height: 100vh;
+    width: 100vw;
+    background: url('/static/img/bg.jpg') no-repeat center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 90%;
+    height: 90%;
+    max-height: 500px;
+    max-width: 700px;
+    color: #333;
+    text-align: center;
+    padding: 50px 35px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+}
+
+.card .logo{
+    height: 100px;
+    margin-bottom: 2rem;
+}
+
+.card h2{
+    font-size: 1.8rem;
+    margin-bottom: .7rem;
+}
+
+.card p{
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.card .btn a{
+    text-decoration: none;
+}
+
+.card .btn{
+    display: inline-block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    background: #fff;
+    color: #2a78f5;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin: 30px 0 10px;
+    transition: all .4s;
+}
+.card .btn:hover{
+    border: #2a78f5 solid 2.8px;
+    background: transparent;
+    color: #333;
+    font-size: .8rem;
+    font-weight: 900;
+}
+
+.bg-cont{
+    position: absolute;
+    /* background: #fff url("/static/img/headerBg.jpg") center / cover; */
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    opacity: 75%;
+    overflow: hidden;
+}
+.bg-cont div{
+    position: relative;
+    opacity: 75%;
+}
+.bg-cont div:nth-child(1){
+    height: 375px;
+    width: 450px;
+     background: linear-gradient(45deg, #2a78f5, #0703c9);;
+     left: -15%;
+     top: -15%;
+     border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+     transform: rotate(45deg);
+     filter: blur(75px);
+}
+.bg-cont div:nth-child(2){
+    height: 563px;
+    width: 675px;
+    background: linear-gradient(#508ff3, #0703c9);
+    border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+    right: -65%;
+    top: -40%;
+    transform: rotate(210deg);
+    filter: blur(75px);
+}
+
