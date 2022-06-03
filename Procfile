@@ -1,1 +1,1 @@
-web gunicorn loangenie:run
+web gunicorn app:run
