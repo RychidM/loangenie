@@ -400,6 +400,7 @@ main .recent-predictions a{
 
 .icon-pro{
     font-size: 25px;
+    cursor: pointer;
     color: var(--color-primary-variant);
 }
 
