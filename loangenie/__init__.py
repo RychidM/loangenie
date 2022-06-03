@@ -18,6 +18,3 @@ bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 
 from loangenie import routes
-
-if __name__ == "__main__":
-    app.run()

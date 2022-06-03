@@ -1,1 +1,1 @@
-web: gunicorn __init__:run
+web: gunicorn loangenie:run
