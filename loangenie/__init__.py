@@ -10,7 +10,6 @@ from loangenie.configure import Config
 
 
 login_manager = LoginManager()
-login_manager.init_app()
 login_manager.login_view = 'users.login'
 bcrypt = Bcrypt()
 db = SQLAlchemy()

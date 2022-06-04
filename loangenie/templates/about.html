@@ -20,8 +20,8 @@
     <!-- nav bar starts -->
     <header>
         <div class="nav-grid">
-            <div class="logo-img"><a href="#"><img src="/static/img/logo50x168.png"
-                alt="" height="37px" width="125px"></div></a>
+            <div class="logo-img"><a href="{{ url_for('main.home') }}"><img src="/static/img/logo50x168.png"
+                alt="" height="37px" width="125px"></a></div>
             <div class="nav-list">
                 <ul>
                     <li ><a style="padding-right:2em" href="{{ url_for('main.home') }}">Home</a></li>
