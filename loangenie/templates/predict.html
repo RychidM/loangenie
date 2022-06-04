@@ -27,19 +27,19 @@
                     <div class="menu">
                         <ul class="menu-links">
                             <li class="nav-link">
-                                <a href="{{ url_for('dashboard') }}">
+                                <a href="{{ url_for('users.dashboard') }}">
                                     <i class="uil uil-apps icon"></i>
                                     <span class="text nav-text">Dashboard</span>
                                 </a>
                             </li>
                             <li class="nav-link">
-                                <a class="active" href="{{ url_for('predict') }}">
+                                <a class="active" href="{{ url_for('users.predict') }}">
                                     <i class="uil uil-dice-three icon"></i>
                                     <span class="text nav-text">Predict</span>
                                 </a>
                             </li>
                             <li class="nav-link">
-                                <a href="{{ url_for('userAccount') }}">
+                                <a href="{{ url_for('users.userAccount') }}">
                                     <i class="uil uil-user icon"></i>
                                     <span class="text nav-text">User Info</span>
                                 </a>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="bottom-content">
                         <li class="">
-                            <a href="{{ url_for('logout') }}">
+                            <a href="{{ url_for('users.logout') }}">
                                 <i class="uil uil-sign-out-alt icon"></i>
                                 <span class="text nav-text">Logout</span>
                             </a>
@@ -69,7 +69,7 @@
                 {% endfor %}
                 
 
-                <form action="{{ url_for('predict') }}" method="post">
+                <form action="{{ url_for('users.predict') }}" method="post">
                     <div class="form first">
                         <div class="details personal">
                             <span class="title">Applicant Personal Details >>></span>

@@ -1,17 +1,26 @@
-from loangenie import app
 import os
 
 secrete_key = os.environ.get('SECRETE_KEY')
 userPass = os.environ.get('LOAN_GENIE')
+databaseURI = os.environ.get('SQLALCHEMY_DATABASE_URI')
+userNAme = os.environ.get('MAIL_USERNAME')
 
-app.config['DEBUG'] = True
-app.config['TESTING'] = False
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'loangenie3@gmail.com'
-app.config['MAIL_PASSWORD'] = userPass
-app.config['MAIL_DEFAULT_SENDER'] = 'loangenie@gmail.com'
-app.config['MAIL_MAX_EMAILS'] = None
-app.config['MAIL_ASCII_ATTACHMENTS'] = False
+
+class Config:
+    SECRET_KEY = secrete_key
+    SQLALCHEMY_DATABASE_URI = databaseURI
+
+    DEBUG = True
+    TESTING = False
+    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    MAIL_USE_SSL = False
+    MAIL_USERNAME = userNAme
+    MAIL_PASSWORD = userPass
+    MAIL_DEFAULT_SENDER = userNAme
+    MAIL_MAX_EMAILS = None
+    MAIL_ASCII_ATTACHMENTS = False
+
+
+

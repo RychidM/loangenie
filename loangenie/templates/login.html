@@ -31,7 +31,7 @@
                 <div class="form-container">
                     <div class="form signup">
                         <span class="title">Signin to Your Account</span>
-                        <form action="{{ url_for('login') }}" method="post" id="signUpForm">
+                        <form action="{{ url_for('users.login') }}" method="post" id="signUpForm">
                                 <div class="input-field">
                                 <input type="text" name="userName" id="userName" placeholder="Username"required>
                                 <i class="uil uil-at icon"></i>
@@ -61,7 +61,7 @@
 
                         <div class="login-signup">
                             <span class="text">New comer?  
-                                <a href="{{ url_for('register') }}" class="text login-text"> signup Here</a>
+                                <a href="{{ url_for('users.register') }}" class="text login-text"> signup Here</a>
                             </span>
                         </div>
                     </div>

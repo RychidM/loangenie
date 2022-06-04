@@ -23,13 +23,13 @@
                 alt="" height="37px" width="125px"></div></a>
             <div class="nav-list">
                 <ul>
-                    <li ><a style="padding-right:2em" href="{{ url_for('home') }}">Home</a></li>
-                    <li><a class="nav-li active" href="{{ url_for('about') }}">About</a></li>
+                    <li ><a style="padding-right:2em" href="{{ url_for('main.home') }}">Home</a></li>
+                    <li><a class="nav-li active" href="{{ url_for('main.about') }}">About</a></li>
                 </ul>
             </div>
             <div class="nav-sign-in-out-btn">
                 <ul>
-                    <li><a class="nav-sign-in-btn" href="{{ url_for('register') }}" id="loggBtn" onclick="toggle()">Join Us</a></li>
+                    <li><a class="nav-sign-in-btn" href="{{ url_for('users.register') }}" id="loggBtn" onclick="toggle()">Join Us</a></li>
                 </ul>
             </div>
         </div>

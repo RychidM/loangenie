@@ -1,5 +1,4 @@
 from flask_login import UserMixin
-from sqlalchemy import null
 from loangenie import db, login_manager
 from datetime import datetime
 
@@ -22,6 +21,7 @@ class Users(db.Model, UserMixin):
 
     def __repr__(self):
         return '<email %r>' %self.email
+
 class Candidates(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     candidateName = db.Column(db.String(100), nullable=False)

@@ -21,7 +21,7 @@
                     <div class="forms">
                         <div class="form signup">
                             <span class="title">Create Your Account</span>
-                            <form id="formRe" action="{{ url_for('register') }}" method="post">
+                            <form id="formRe" action="{{ url_for('users.register') }}" method="post">
                                 <div class="input-field">
                                     <input type="text" class="name" name="Fullname" id="" placeholder="Full Name" required>
                                     <i class="uil uil-user-circle icon"></i>
@@ -69,7 +69,7 @@
 
                             <div class="login-signup">
                                 <span class="text">Have an account?
-                                    <a href="{{ url_for('login') }}" class="text login-text">Login Here</a>
+                                    <a href="{{ url_for('users.login') }}" class="text login-text">Login Here</a>
                                 </span>
                             </div>
                         </div>
