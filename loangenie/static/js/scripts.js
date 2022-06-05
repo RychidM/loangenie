@@ -9,9 +9,9 @@ var logggin = document.getElementById('loggBtn');
 const formSub = document.getElementById('formRe');
 const subBtn = document.getElementById('buttn');
 
-        let date = new Date();
-            let year = date.getFullYear();
-            document.getElementById('currYr').innerHTML = year;
+        // let date = new Date();
+        //     let year = date.getFullYear();
+        //     document.getElementById('currYr').innerHTML = year;
 
 pwShowHide.forEach(eyeIcon => {
     eyeIcon.addEventListener("click", ()=>{

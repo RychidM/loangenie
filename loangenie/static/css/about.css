@@ -109,6 +109,9 @@ header ul li a{
     border: #2a78f5 solid 2.8px;
     transition: .5s;
 }
+.nav-sign-in-btn:hover{
+    background: #2a78f5;
+}
 .container{
     position: absolute;
     top: 0;
