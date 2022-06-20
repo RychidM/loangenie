@@ -338,10 +338,10 @@ main .infoCard{
     justify-content: center;
     text-align: left;
     padding: 50px 35px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
     background: rgba(255, 255, 255, 0.1);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(1px);
 }
 
@@ -388,12 +388,25 @@ main .infoCard{
 
 }
 
-@media screen and (max-width: 500px) {
-    form .fields .input-field{
-        width: calc(100% / 1 - 15px);
+@media screen and (max-width: 468px) {
+    main{
+        margin-left: -20px;
     }
+   main img{
+       height: 60px;
+       width: 60px;
+   }
 
-    .toast{
-        display: none;
-     }
+   main .imgFile h2{
+    font-size: 12px;
+}
+
+    main .imgFile p{
+    font-size: 10px;
+}
+
+    main .infoCard{
+        width: 280px;
+        height: 400px;
+    }
 }

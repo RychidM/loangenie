@@ -40,6 +40,28 @@
                     <li><a class="nav-sign-in-btn" href="{{ url_for('users.login') }}" id="loggBtn" onclick="toggle()">Sign In</a></li>
                 </ul>
             </div>
+
+            <div class="hamburger">
+                <i class="uil uil-bars"></i>
+            </div>
+
+            <div class="burger-menu">
+                <div class="burger-things">
+                    <div class="hamburger-close">
+                        <i class="uil uil-times"></i>
+                    </div>
+                    <div class="burger-nav-list">
+                        <ul>
+                            <li ><a class="active" style="padding-right:2em" href="{{ url_for('main.home') }}">Home</a></li>
+                            <div class="line1"></div>
+                            <li><a class="nav-li" href="{{ url_for('main.about') }}">About</a></li>
+                            <div class="line2"></div>
+                            <li><a class="nav-li" href="{{ url_for('users.login') }}">Sign In</a></li>
+                            <div class="line3"></div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
     <!-- nav bar ends -->
@@ -59,5 +81,6 @@
     <!-- page contents ends -->
     
     <script src="/static/js/scripts.js"></script>
+    <script src="/static/js/resp.js"></script>
 </body>
 </html>

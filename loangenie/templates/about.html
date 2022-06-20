@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/about.css">
     <link rel="icon" type="image/x-icon" href="/static/img/favIcon.png">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>About</title>
 </head>
 <body>
@@ -18,25 +19,49 @@
         <!-- end blur shape bg -->
         </div>
     <!-- nav bar starts -->
+   
+  
+    </div>  
+
     <header>
         <div class="nav-grid">
             <div class="logo-img"><a href="{{ url_for('main.home') }}"><img src="/static/img/logo50x168.png"
-                alt="" height="37px" width="125px"></a></div>
+                alt="" height="37px" width="125px"></div></a>
             <div class="nav-list">
                 <ul>
-                    <li ><a style="padding-right:2em" href="{{ url_for('main.home') }}">Home</a></li>
-                    <li><a class="nav-li active" href="{{ url_for('main.about') }}">About</a></li>
+                    <li ><a class="active" style="padding-right:2em" href="{{ url_for('main.home') }}">Home</a></li>
+                    <li><a class="nav-li" href="{{ url_for('main.about') }}">About</a></li>
                 </ul>
             </div>
             <div class="nav-sign-in-out-btn">
                 <ul>
-                    <li><a class="nav-sign-in-btn" href="{{ url_for('users.register') }}" id="loggBtn" onclick="toggle()">Join Us</a></li>
+                    <li><a class="nav-sign-in-btn" href="{{ url_for('users.login') }}" id="loggBtn" onclick="toggle()">Sign In</a></li>
                 </ul>
+            </div>
+
+            <div class="hamburger">
+                <i class="uil uil-bars"></i>
+            </div>
+
+            <div class="burger-menu">
+                <div class="burger-things">
+                    <div class="hamburger-close">
+                        <i class="uil uil-times"></i>
+                    </div>
+                    <div class="burger-nav-list">
+                        <ul>
+                            <li ><a style="padding-right:2em" href="{{ url_for('main.home') }}">Home</a></li>
+                            <div class="line1"></div>
+                            <li><a class="active" class="nav-li" href="{{ url_for('main.about') }}">About</a></li>
+                            <div class="line2"></div>
+                            <li><a class="nav-li" href="{{ url_for('users.login') }}">Sign In</a></li>
+                            <div class="line3"></div>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
-    <!-- nav bar ends -->
-    <!-- page contents starts -->
 
     <div class="container">
         <div class="card">
@@ -56,9 +81,7 @@
         </div>
         
     </div>
-  
-    </div>  
-    <!-- page contents ends -->
     
+    <script src="/static/js/resp.js"></script>
 </body>
 </html>

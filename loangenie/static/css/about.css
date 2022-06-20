@@ -73,6 +73,19 @@ header ul li a{
     padding: 6px;
     color: #333;
 }
+
+header .hamburger{
+    display: none;
+}
+
+header .hamburger-close{
+    display: none;
+}
+
+header .burger-nav-list{
+    display: none;
+}
+
 .nav-list{
     margin-left: 150px;
     width: 10rem;
@@ -129,7 +142,7 @@ header ul li a{
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
     max-height: 500px;
     max-width: 800px;
     color: #333;
@@ -168,7 +181,6 @@ header ul li a{
 
 @media screen and (max-width: 768px){
     .bg-cont{
-        /* background: #fff url("/static/img/headerBg.jpg") center / cover; */
         height: 100%;
         width: 100vw;
         margin: auto;
@@ -182,24 +194,132 @@ header ul li a{
     .land-page div:nth-child(2){
         display: none;
     }
+
+    .card{
+        /* top: 50px; */
+        width: 90%;
+        height: 70%;
+    }
+
+    body{
+        overflow: hidden;
+    }
+
+    header .hamburger{
+        display: block;
+        position: absolute;
+        right: 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 10000000;
+    }
+
+    header .hamburger-close{
+        position: absolute;
+        right: 20px;
+        font-size: 1.5rem;
+        z-index: 1;
+        color: #fff;
+        top: 20px;
+        cursor: pointer;
+        transition: all .1s linear;
+    }
+    
+    header .hamburger-close:hover{
+        color: #3d3d5e;
+    }
+
+    header .burger-things{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .burger-menu{
+        position: relative;
+        top: -450px;
+        height: 350px;
+        width: 100vw;
+        background: rgb(0, 0, 0);
+        box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+        backdrop-filter: blur(2px);
+        transition: all .5s linear;
+    }
+
+    header .burger-nav-list{
+        display: flex;
+        justify-content: space-between;
+        z-index: 1000000;
+    }
+
+    header .burger-nav-list ul{
+        position: absolute;
+        top: 25%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        flex-direction: column;
+        font-size: 2rem;
+        padding-bottom: 10px;    
+    }
+
+    header .burger-nav-list ul li a{
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 2em;
+        padding-left: 2em;
+        transition: all .3s linear
+    }
+
+    header .burger-nav-list a:hover{
+        padding-left: 1rem;
+        color: #3d3d5e;
+    }
+
+    header .burger-nav-list li a.active{
+        color: #3d3d5e;
+    }
+
+    .container .abtTxt h2{
+        font-size: 2.5rem;
+    }
+
+    .container .abtTxt p{
+        font-size: .8rem;
+    }
+
+    .container .abtImg img{
+        height: 200px;
+    }
+
 }
 
-@media screen and (max-width:664px) {
+/* @media screen and (max-width: 707px) {
+    h2{
+        font-size: 1rem;
+    }
+} */
+
+@media screen and (max-width:707px) {
     .land-page div:nth-child(2){
         display: none;
     }
 
-    .land-page h3{
-        margin-left: -30px;
+    .container .abtTxt h2{
         font-size: 2rem;
     }
-    .land-page p{
-        margin-left: -30px;
-        font-size: 1rem;
+    .container .abtTxt p{
+        font-size: .8rem;
     }
 
-    .land-page a{
+        .container a{
         margin-left: -30px;
+    }
+
+    .container .abtImg img{
+        height: 200px;
     }
 
     .nav-list{
@@ -210,6 +330,12 @@ header ul li a{
 @media screen and (max-width:574px){
     .nav-sign-in-btn{
         display: none;
+    }
+
+    .card{
+        height: 80%;
+        top: 10px;
+        flex-direction: column;
     }
 }
 

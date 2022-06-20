@@ -259,6 +259,10 @@ b{
     transition: var(--trans-03);
 }
 
+.sidebar header .toggler{
+    display: none;
+}
+
 .sidebar.open header .toggle{
     transform: translateY(-50%);
 }
@@ -353,6 +357,7 @@ main .recent-predictions h2{
 main .recent-predictions table{
     background: var(--color-white);
     width: 100%;
+    height: 100%;
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     text-align: center;
@@ -360,7 +365,7 @@ main .recent-predictions table{
 }
 
 main table tbody td{
-    height: 50%;
+    height: 100%;
     padding-top: 1rem;
     border-bottom: 1px solid var(--color-light);
     color: var(--color-dark-variant);
@@ -379,6 +384,7 @@ main .recent-predictions a{
 
 .right{
     margin-top: .5rem;
+    right: .5rem;
 }
 
 .right .top{
@@ -448,7 +454,7 @@ main .recent-predictions a{
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    gap: 1rem;
+    gap: 2rem;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
     cursor: pointer;
 }
@@ -464,11 +470,6 @@ main .recent-predictions a{
     color: var(--color-primary-variant);
 }
 
-footer{
-    position: absolute;
-    left: 50%;
-    bottom: 5px;
-}
 
 @media screen and (max-width: 1024px){
     .sidebar header .toggle{
@@ -482,7 +483,7 @@ footer{
     }
     
     .sidebar .rec-logo{
-        opacity: 0;
+        display: none;
     }
     
     .sidebar .image-text .cube-logo{
@@ -493,10 +494,7 @@ footer{
         grid-template-columns: 88px auto 23rem;
     }
 
-    main table thead tr th:nth-child(2), 
-    main table tbody tr td:nth-child(2){
-        display: none;
-    }
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -514,7 +512,7 @@ footer{
         margin-bottom: 0;
         top: 10px;
         width: 85%;
-        padding: 5px 15px;
+        padding: 5px 10px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
         border-radius: 5px;
         padding-right: 2rem;
@@ -564,11 +562,16 @@ footer{
         margin-left: 90px;
     }
 
+    .burger-menu{
+        display: none;
+    }
+
     .right{
         margin: 0 auto 4rem;
         width: 85%;
         margin-left:  100px;
         height: 100%;
+        gap: 2rem;
     }
 
     .right .top{
@@ -592,6 +595,97 @@ footer{
     }
 
     .right .make-predit{
-        margin-bottom: 5rem;
+        margin-bottom: 2rem;
+        margin-top: -2rem;
     }
+
+    footer{
+        height: .5rem;
+        width: 100vw;
+        background: transparent;
+    }
+}
+
+@media screen and (max-width:468px) {
+    .sidebar{
+        left: -120px;
+        position: fixed;
+        z-index: 100000;
+        box-shadow: 0 13px 16px rgba(0, 0, 0, .13);
+    }
+
+    .sidebar.open{
+        left: 0;
+    }
+    main.open{
+        opacity: .5;
+    }
+    .right.open{
+        opacity: .5;
+        pointer-events: none;
+    }
+
+    .sidebar header .toggler{
+        position: absolute;
+        top: 80px;
+        right: -25px;
+        transform: translateY(-50%) rotate(180deg);
+        height: 25px;
+        width: 28px;
+        background: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: var(--color-sidebar);
+        font-size: 22px;
+        transition: var(--trans-03);
+    }
+
+    .sidebar header .toggle{
+        display: none;
+    }
+/* 
+    main{
+        backdrop-filter: blur(10px);
+    } */
+
+    main .recent-predictions{
+        left: -60px;
+    }
+    /* .right{
+        backdrop-filter: blur(10px);
+    }
+    .container{
+        backdrop-filter: blur(10px);
+    } */
+    main table thead tr th:nth-child(2), 
+    main table tbody tr td:nth-child(2){
+        display: none;
+    }
+
+    .container .header{
+        left: -100px;
+        width: 100%;
+    }
+
+    .right{
+        width: 80%;
+        margin-left: 50px;
+        bottom: 20px;
+    }
+
+    .burger-menu{
+        display: block;
+        margin-top: 5px;
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .header h1{
+        margin-top: 5px;
+        margin-left: 20px;
+        font-size: 1.5rem;
+    }
+
 }
