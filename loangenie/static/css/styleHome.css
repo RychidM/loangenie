@@ -299,6 +299,10 @@ header .hamburger-close{
         overflow: hidden;
     }
 
+    body .mainCont{
+        overflow: hidden;
+    }
+
     header .hamburger{
         display: block;
         position: absolute;
@@ -396,6 +400,7 @@ header .hamburger-close{
         width: 100vw;
         margin: auto;
         opacity: 75%;
+        overflow: hidden;
     }
     .land-page div:nth-child(1){
         position: relative;
@@ -437,6 +442,9 @@ header .hamburger-close{
 }
 
 @media screen and (max-width:425px){
+    body{
+        overflow: hidden;
+    }
     .nav-sign-in-btn{
         display: none;
     }
