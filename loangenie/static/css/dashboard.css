@@ -412,6 +412,7 @@ main .recent-predictions a{
 
 .icon-pro img{
     height: 32px;
+    width: 32px;
 }
 
 .right .eli-Title h2{
@@ -683,9 +684,14 @@ main .recent-predictions a{
     }
 
     .header h1{
-        margin-top: 5px;
+        margin-top: 3px;
         margin-left: 20px;
         font-size: 1.5rem;
+    }
+
+    .icon-pro img{
+        height: 28px;
+        width: 28px;
     }
 
 }
