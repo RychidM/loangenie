@@ -142,10 +142,12 @@ b{
 
 .danger{
     color: var(--color-danger);
+    font-weight: 600;
 }
 
 .success{
     color: var(--color-success);
+    font-weight: 600;
 }
 
 .warning{
@@ -332,7 +334,7 @@ main .date input[type="date"]{
 
 main .insights{
     width: 100%;
-    height: 70%;
+    /* height: 70%; */
     padding: 10px 20px;
     background: var(--color-white);
     margin-top: 1rem;
@@ -666,6 +668,8 @@ main .recent-predictions a{
     }
 
     .container .header{
+        top: 0;
+        border-radius: 0;
         left: -100px;
         width: 100%;
     }

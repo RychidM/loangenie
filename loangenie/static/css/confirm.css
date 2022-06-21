@@ -20,7 +20,7 @@ body{
 body .container{
     height: 100vh;
     width: 100vw;
-    background: url('/static/img/bg.jpg') no-repeat center;
+    background: url('/static/img/headerBg.jpg') center / cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@ body .container{
     text-align: center;
     padding: 50px 35px;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(1px);
@@ -52,9 +52,9 @@ body .container{
 }
 
 .card p{
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .card .btn a{
@@ -76,9 +76,6 @@ body .container{
 .card .btn:hover{
     border: #2a78f5 solid 2.8px;
     background: transparent;
-    color: #333;
-    font-size: .8rem;
-    font-weight: 900;
 }
 
 .bg-cont{
@@ -115,3 +112,8 @@ body .container{
     filter: blur(75px);
 }
 
+@media screen and (max-width: 325px) {
+    .card .logo img{
+        height: 80px;
+    }
+}
