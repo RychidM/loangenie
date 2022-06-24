@@ -6,6 +6,7 @@ const hamburger = document.querySelector(".hamburger"),
 
 hamburger.addEventListener("click", ()=>{
     burger_menu.style.top = '0';
+    burger_menu.style.display = 'block';
     hamburger.style.display = 'none';
     burger_close.style.display = 'block';
 });

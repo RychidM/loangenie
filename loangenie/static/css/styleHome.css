@@ -334,8 +334,9 @@ header .hamburger-close{
     }
 
     header .burger-menu{
+        display: none;
         position: relative;
-        top: -450px;
+        top: -500px;
         height: 350px;
         width: 100vw;
         background: rgb(0, 0, 0);
