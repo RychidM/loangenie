@@ -253,6 +253,15 @@ header .hamburger-close{
     }
 }
 
+@media screen and (min-width: 768px) {
+    .hamburger{
+        display: none;
+    }
+    .hamburger-close{
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1380px) {
     .land-page div:nth-child(1){
         min-width: 600px;
@@ -323,6 +332,10 @@ header .hamburger-close{
         transition: all .1s linear;
     }
 
+    header .hamburger-close.tog{
+        display: block;
+    }
+
     header .hamburger-close:hover{
         color: #3d3d5e;
     }
@@ -334,10 +347,9 @@ header .hamburger-close{
     }
 
     header .burger-menu{
-        display: none;
         position: relative;
         top: -500px;
-        height: 350px;
+        height: 250px;
         width: 100vw;
         background: rgb(0, 0, 0);
         box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
@@ -345,14 +357,25 @@ header .hamburger-close{
         transition: all .5s linear;
     }
 
+    header .burger-menu.tog{
+        display: block;
+        top: 0;
+    }
+
+    header .burger-menu.togg{
+        /* display: none; */
+        top: -450px;
+    }
+
     header .burger-nav-list{
         display: flex;
         justify-content: space-between;
+        z-index: 10000000;
     }
 
     header .burger-nav-list ul{
         position: absolute;
-        top: 25%;
+        top: 15%;
         left: 0;
         right: 0;
         bottom: 0;
@@ -383,7 +406,7 @@ header .hamburger-close{
     } */
 
     header .burger-nav-list li a.active{
-        /* padding-left: 2rem; */
+        padding-left: 2rem;
         color: #3d3d5e;
     }
 
@@ -409,6 +432,14 @@ header .hamburger-close{
     }
 
     .land-page div:nth-child(2){
+        display: none;
+    }
+
+    .nav-list li{
+        display: none;
+    }
+
+    .nav-sign-in-btn{
         display: none;
     }
 }

@@ -237,13 +237,23 @@ header .burger-nav-list{
 
     header .burger-menu{
         position: relative;
-        top: -450px;
-        height: 350px;
+        top: -500px;
+        height: 250px;
         width: 100vw;
         background: rgb(0, 0, 0);
         box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
         backdrop-filter: blur(2px);
         transition: all .5s linear;
+    }
+
+    header .burger-menu.tog{
+        display: block;
+        top: 0;
+    }
+
+    header .burger-menu.togg{
+        display: none;
+        top: -450px;
     }
 
     header .burger-nav-list{
@@ -254,7 +264,7 @@ header .burger-nav-list{
 
     header .burger-nav-list ul{
         position: absolute;
-        top: 25%;
+        top: 15%;
         left: 0;
         right: 0;
         bottom: 0;
@@ -280,6 +290,7 @@ header .burger-nav-list{
 
     header .burger-nav-list li a.active{
         color: #3d3d5e;
+        padding-left: 2rem;
     }
 
     .container .abtTxt h2{
