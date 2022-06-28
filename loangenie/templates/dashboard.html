@@ -113,13 +113,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                       
+                        {% for candidate in candidates %}
                         <tr>
-                            <td>Michael Angelo</td>
-                            <td>mangelo@live.com</td>
-                            <td>2000</td>
+                            <td>{{ candidate.candidateName }}</td>
+                            <td>{{ candidate.candidateEmail }}</td>
+                            <td>{{ candidate.loanAmount }}</td>
                             <td class="success">Eligible</td>
                         </tr>
+                        {% endfor %}
                         <tr>
                             <td>Franck Ohene</td>
                             <td>ohenefrank@live.com</td>

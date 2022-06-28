@@ -1,0 +1,276 @@
+/* ===== Google Font Import - Poformsins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+:root{
+    --color-primary: #0168b5;
+    --color-background: #eef7fe;
+    --color-danger: #ff7782;
+    --color-warning: #ffbb55;
+    --color-success: #41f1b6;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-sidebar: #fff;
+    --color-dark: #363949;
+    --color-toggle: #ddd;
+    --color-text: #707070;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-primary-variant: #246de2;
+    --color-dark-variant: #677483;
+
+    --card-border-radius: 1rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --trans-02: all 0.2s ease;
+    --trans-03: all 0.3s ease;
+    --trans-04: all 0.4s ease;
+    --trans-05: all 0.5s ease;
+
+    --box-shadow: 0 2rem 3rem var(--color-light)
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+
+body .container{
+    height: 100vh;
+    width: 100vw;
+    background: url('/static/img/headerBg.jpg') center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 90%;
+    height: 90%;
+    max-height: 500px;
+    max-width: 700px;
+    color: #333;
+    text-align: center;
+    padding: 50px 35px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+}
+
+.card .logo{
+    height: 100px;
+    margin-bottom: 2rem;
+}
+
+.card h2{
+    font-size: 1.8rem;
+    margin-bottom: .7rem;
+}
+
+.card p{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.card .btn a{
+    text-decoration: none;
+}
+
+.card .btn{
+    display: inline-block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    background: #fff;
+    color: #2a78f5;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin: 30px 0 10px;
+    transition: all .4s;
+}
+.card .btn:hover{
+    border: #2a78f5 solid 2.8px;
+    background: transparent;
+}
+
+.bg-cont{
+    position: absolute;
+    /* background: #fff url("/static/img/headerBg.jpg") center / cover; */
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    opacity: 75%;
+    overflow: hidden;
+}
+.bg-cont div{
+    position: relative;
+    opacity: 75%;
+}
+.bg-cont div:nth-child(1){
+    height: 375px;
+    width: 450px;
+     background: linear-gradient(45deg, #2a78f5, #0703c9);;
+     left: -15%;
+     top: -15%;
+     border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+     transform: rotate(45deg);
+     filter: blur(75px);
+}
+.bg-cont div:nth-child(2){
+    height: 563px;
+    width: 675px;
+    background: linear-gradient(#508ff3, #0703c9);
+    border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+    right: -65%;
+    top: -40%;
+    transform: rotate(210deg);
+    filter: blur(75px);
+}
+
+.input-field{
+    position: relative;
+    left: 15%;
+    height: 43px;
+    max-width: 450px;
+    margin-top: 30px;
+}
+
+.card h2, p{
+    margin-top: -20px;
+}
+.card p{
+    margin-top: 5px;
+}
+.reqForm input{
+    height: 100%;
+    width: 100%;
+    padding: 0 45px;
+    font-size: 13px;
+    background: transparent;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    color: #333;
+    transition: all .2s ease;
+}
+
+.reqForm input:is(:focus){
+    border-color: #246de2;
+}
+
+.input-field input::placeholder{
+    color: #888;
+}
+
+.reqForm .input-field i{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#icon {
+    width: 30px;
+    left: 0;
+}
+
+.input-field small{
+    position: absolute;
+    display: flex;
+    font-size: 12px;
+    flex-direction: column;
+    top: 3rem;
+    bottom: 0;
+    color: var(--color-danger);
+}
+
+.input-field button{
+    margin-top: -10px;
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 100%;
+    background-color: #0168b5;
+    color: var(--color-white);
+    border-radius: 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--trans-03);
+}
+
+button:hover{
+    background: #246de2;
+}
+
+h5{
+    top: 0;
+    right: 15%;
+    position: absolute;
+    margin-top: 50px;
+    font-size: large;
+    background: rgb(255, 255, 255);
+    padding: 30px 45px 30px 35px;
+    border-radius: 5px;
+    max-width: 400px;
+    font-weight: 500;
+    border-left: 5px solid #24e2b9;
+    color: #24e2b9;
+    z-index: 10000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 325px) {
+    .card .logo img{
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .input-field{
+        left: 10%;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .input-field{
+        left: 2%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .input-field{
+        left: 2%;
+        margin-top: -2px;
+    }
+
+    .input-field small{
+        font-size: 10px;
+        top: 2.5rem;
+        /* margin-top: 10px; */
+        padding-bottom: 10px;
+    }
+}

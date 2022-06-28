@@ -1,12 +1,11 @@
 
-from flask import Config, Flask
+from flask import Config, Flask, current_app, g
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
 from flask_mail import Mail
 from loangenie import candidates
 from loangenie.configure import Config
-
 
 
 login_manager = LoginManager()
@@ -26,6 +25,8 @@ def create_app(config_class=Config):
     db.init_app(app)
     mail.init_app(app)
 
+    from loangenie.models import Users, Candidates
+
     from loangenie.users.routes import users
     from loangenie.main.routes import main
     from loangenie.candidates.routes import candidates
@@ -33,6 +34,15 @@ def create_app(config_class=Config):
     app.register_blueprint(main)
     app.register_blueprint(candidates)
 
+    with app.app_context():
+        db.create_all()
+        db.session.commit()
+
     return app
+
+
+
+
+
 
 

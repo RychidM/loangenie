@@ -350,7 +350,7 @@ header .burger-nav-list{
     }
 }
 
-@media screen and (max-width:425px){
+@media screen and (max-width:430px){
     .nav-sign-in-btn{
         display: none;
     }

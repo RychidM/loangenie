@@ -473,7 +473,7 @@ header .hamburger-close{
     }
 }
 
-@media screen and (max-width:425px){
+@media screen and (max-width:430px){
     body{
         overflow: hidden;
     }
@@ -483,11 +483,11 @@ header .hamburger-close{
 
     .land-page h3{
         margin-left: -70px;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     .land-page p{
         margin-left: -70px;
-        font-size: .6rem;
+        font-size: .8rem;
     }
 
     .land-page a{

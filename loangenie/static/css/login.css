@@ -300,6 +300,23 @@ button:hover{
     margin-top: 2px;
 }
 
+h5{
+    top: 0;
+    right: 15%;
+    position: absolute;
+    margin-top: 50px;
+    font-size: large;
+    background: rgb(255, 255, 255);
+    padding: 30px 45px 30px 35px;
+    border-radius: 5px;
+    max-width: 400px;
+    font-weight: 500;
+    border-left: 5px solid #24e2b9;
+    color: #24e2b9;
+    z-index: 10000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 @media screen and (max-width: 525px) {
     .wrapper{
     grid-template-columns: repeat(1, 1fr);

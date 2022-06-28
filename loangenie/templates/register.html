@@ -43,19 +43,23 @@
                                     <small></small>
                                 </div>
                                 <div class="input-field">
-                                    <input type="password" class="passwordCC" name="Password" id="password" placeholder="Password" required>
+                                    <input type="password" class="passwordCC" name="Password" id="password" placeholder="eg. P@ssw0rd" required>
                                     <i class="uil uil-lock icon"></i>
-                                    <small>{{ errorMsg }}</small>
+                                    {% for message in get_flashed_messages() %}
+                                    <small class="danger">{{ message }}</small>
+                                    {% endfor %}
                                 </div>
                                 <div class="input-field">
                                     <input type="password" class="passwordCC" name="conPass" id="conPass" placeholder="Confirm Password" required>
                                     <i class="uil uil-lock icon"></i>
                                     <i class="uil uil-eye-slash showHidePw"></i>
-                                    <small>{{ errorMsg }}</small>
+                                    {% for message in get_flashed_messages() %}
+                                    <small class="danger">{{ message }}</small>
+                                    {% endfor %}
                                 </div>
                                 <div class="checkbox-text">
                                     <div class="checkbox-content">
-                                        <input type="checkbox" id="sigCheck">
+                                        <input type="checkbox" id="sigCheck" required>
                                         <label for="sigCheck" class="text">I Agree to <a href="#">Terms </a> and <a href="#">Policy</a></label>
                                     </div>
                                 </div>

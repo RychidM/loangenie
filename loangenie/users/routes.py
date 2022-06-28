@@ -1,5 +1,6 @@
 from datetime import datetime
 import pickle
+import re
 from flask import Blueprint, render_template, request, url_for, redirect, flash
 from flask_login import login_user, current_user,logout_user, login_required
 from flask_mail import Message
@@ -28,8 +29,15 @@ def register():
         org = request.form['org']
         password2 = request.form['conPass']
         password1 = request.form['Password']
+        
+        if not check_password(password1):
+            flash('Invalid password')
+            return redirect(url_for('users.register'))
+        elif password2 != password1:
+            flash('Password mismatch')
+            return redirect(url_for('users.register'))
 
-        if password1 == password2:
+        else: 
 
             hashedPassword = bcrypt.generate_password_hash(password2).decode('utf-8')
 
@@ -52,8 +60,8 @@ def register():
             except:
              return "Unable to register you at the momment :( , please wait a while and try again"
             return redirect(url_for('users.email_confirmation'))
-        else:
-            return render_template('register.html', errorMsg = 'password mismatch')
+            
+    # return render_template('register.html', errorMsg = 'password mismatch')
 
 
 @users.route('/login', methods=['GET', 'POST'])
@@ -161,7 +169,7 @@ def predict():
         arr = np.array([[d1, d2, d3, d4, d5, d6, d7, d8, d9,d10,d11]])
 
         pred = model.predict(arr)
-        newCand = Candidates(candidateName=CandName, candidateEmail=CandEmail, candidateTell=CandTel, loanAmount=d7)
+        newCand = Candidates(candidateName=CandName, candidateEmail=CandEmail, candidateTell=CandTel, loanAmount=d7, loanStatus = pred)
         
         try:
             db.session.add(newCand)
@@ -187,6 +195,84 @@ def predict():
 @users.route('/dashboard', methods=['POST', 'GET'])
 @login_required
 def dashboard():
+    candidates = Candidates.query.all()
     image_file = url_for('static', filename='img/' + current_user.image_file)
-    return render_template('dashboard.html', 
+    return render_template('dashboard.html', candidates = candidates,
     name=current_user.username, image_file =image_file, dateCrr = datetime.utcnow)
+
+
+def send_reset_email(user):
+    token = user.get_reset_token()
+    msg = Message('Password Reset Request', sender='noreply@demo.com',
+    recipients=[user.email])
+    msg.body = f'''Kindly follow link to reset your password.
+{url_for('users.resetToken', token = token, _external=True )}
+
+If you did not make this request, please ignore this message and no change will be made.
+    
+'''
+    mail.send(msg)
+
+def check_password(password):
+    reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,20}$"
+
+    pat = re.compile(reg)
+    mat = re.search(pat, password)
+
+    if mat:
+        return password
+    else:
+        return None
+
+@users.route('/reset-password', methods=['POST', 'GET'])
+def resetRequest():
+
+    if request.method == 'GET':
+        if current_user.is_authenticated:
+            return redirect(url_for('users.dashboard'))
+        return render_template('request_reset.html')
+        
+    else:
+        emailAddress = request.form['emailAdd']
+        user = Users.query.filter_by(email= emailAddress).first()
+        if user is None:
+            return render_template('request_reset.html', noUser="No user found with this email address")
+        else:
+            send_reset_email(user)
+            flash("An email with a password reset link has been sent to the email address you provided.")
+        return render_template('request_reset.html')
+
+@users.route('/reset-password/<token>', methods=['POST', 'GET'])
+def resetToken(token):
+    if request.method == 'GET':
+        if current_user.is_authenticated:
+            return redirect(url_for('users.dashboard'))
+        user = Users.verify_reset_token(token)
+
+        if not user:
+            flash('Invalid or expired token', 'danger')
+            return redirect(url_for('users.resetRequest'))
+    else:
+        user = Users.verify_reset_token(token)
+
+        password = request.form['password']
+        password1 = request.form['ConPassword']
+
+        if not check_password(password1):
+            flash('Invalid password')
+            return redirect(url_for('users.resetToken', token=token))
+        elif password != password1:
+            flash('Password mismatch')
+            return redirect(url_for('users.resetToken', token = token))
+        else:
+            hashed_password = bcrypt.generate_password_hash(password1).decode('utf8')
+            user.password = hashed_password
+            db.session.commit()
+            flash('Password changed', 'warining')
+            return redirect(url_for('users.login'))  
+    return render_template('reset_password.html')
+
+
+@users.route('/reset', methods=['POST', 'GET'])
+def reset():
+    return render_template('reset_password.html')

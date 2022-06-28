@@ -27,6 +27,11 @@
                 <div class="log-logo">
                     <img src="/static/img/logo50x168.png" alt="">
                 </div>
+                {% for message in get_flashed_messages() %}
+                <h5 class="message sucess">
+                    {{ message }}
+                </h5>
+                {% endfor %}
 
                 <div class="form-container">
                     <div class="form signup">
@@ -48,7 +53,7 @@
                                     <input type="checkbox" name="rememder" id="sigCheck">
                                     <label for="sigCheck" class="text">Remember me</label>
 
-                                    <a href="" class="text">Forgot password?</a>
+                                    <a href="{{ url_for('users.resetRequest') }}" class="text">Forgot password?</a>
                                 </div>
                             </div>
 

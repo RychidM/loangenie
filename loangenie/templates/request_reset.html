@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/req_reset.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>Requestion Password Reset</title>
+</head>
+<body>
+    <div class="bg-cont">
+        <!-- start blured shapes bg -->
+        <div></div>
+        <div></div>
+        <div></div>
+        <!-- end blur shape bg -->
+    </div>
+    <div class="container">
+        <div class="card">
+
+            {% for message in get_flashed_messages() %}
+                <h5 class="message">{{ message }}</h5>
+                {% endfor %}
+
+            <img src="/static/img/logo-rec.png" alt="" class="logo">
+            <h2>Request Password Reset</h2>
+            <p>Please provide the eamil address associated with your account</p>
+            
+            <div class="reqForm">
+                <form action="{{ url_for('users.resetRequest')}}", method="post">
+                    <div class="input-field">
+                        <input type="email" name="emailAdd" id="email" placeholder="Email address"required>
+                        <i id="icon" class="uil uil-at icon"></i>
+                        <small class="danger">{{ noUser }}</small>
+                    </div>
+                    <div class="input-field button">
+                        <button>
+                            <span>Request Reset</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
